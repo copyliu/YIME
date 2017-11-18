@@ -30,6 +30,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,9 +42,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="TSF.TypeLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TSF.TypeLib.1.0.1.0\lib\portable-windows8+net45\TSF.TypeLib.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -49,9 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TSF-TypeLib\TSF.TypeLib\TSF.TypeLib.csproj">
+      <Project>{6bb248e4-cd03-40a4-810c-19e038af2715}</Project>
+      <Name>TSF.TypeLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YIME.Core\YIME.Core.csproj">
       <Project>{31b491e9-304f-4d2a-a4f1-f4d7d1bd543e}</Project>
       <Name>YIME.Core</Name>

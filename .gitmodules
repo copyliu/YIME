@@ -1,3 +1,6 @@
 [submodule "librime"]
 	path = librime
 	url = https://github.com/rime/librime.git
+[submodule "TSF-TypeLib"]
+	path = TSF-TypeLib
+	url = https://github.com/copyliu/TSF-TypeLib.git

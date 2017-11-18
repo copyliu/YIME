@@ -47,20 +47,25 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="TSF.TypeLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TSF.TypeLib.1.0.1.0\lib\portable-windows8+net45\TSF.TypeLib.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayAttributeInfo.cs" />
+    <Compile Include="YimeCandidateManager.cs" />
+    <Compile Include="YimeCompositionManager.cs" />
     <Compile Include="YimeTextService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="YIME.snk" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TSF-TypeLib\TSF.TypeLib\TSF.TypeLib.csproj">
+      <Project>{6bb248e4-cd03-40a4-810c-19e038af2715}</Project>
+      <Name>TSF.TypeLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

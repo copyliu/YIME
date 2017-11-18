@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YIME.Core", "YIME.Core\YIME
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YIME.Gui", "YIME.Gui\YIME.Gui.csproj", "{2CF50689-5192-45EF-B959-CDE8B2BA2476}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSF.TypeLib", "TSF-TypeLib\TSF.TypeLib\TSF.TypeLib.csproj", "{6BB248E4-CD03-40A4-810C-19E038AF2715}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2CF50689-5192-45EF-B959-CDE8B2BA2476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CF50689-5192-45EF-B959-CDE8B2BA2476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CF50689-5192-45EF-B959-CDE8B2BA2476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB248E4-CD03-40A4-810C-19E038AF2715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB248E4-CD03-40A4-810C-19E038AF2715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB248E4-CD03-40A4-810C-19E038AF2715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB248E4-CD03-40A4-810C-19E038AF2715}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

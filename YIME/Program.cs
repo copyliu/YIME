@@ -54,13 +54,14 @@ namespace YIME
 
             Console.WriteLine(result.ToString());
             var regservice = new RegistrationServices();
-            regservice.UnregisterAssembly(Assembly.LoadFile("YIME.Core.dll"));
+            regservice.UnregisterAssembly(Assembly.LoadFrom("YIME.Core.dll"));
         }
         [STAThread]
         public static void Register()
         {
             var regservice = new RegistrationServices();
-            regservice.RegisterAssembly(Assembly.LoadFile("YIME.Core.dll"),
+            
+            regservice.RegisterAssembly(Assembly.LoadFrom("YIME.Core.dll"),
                 AssemblyRegistrationFlags.SetCodeBase);
             var iconname = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location),
                 "YIME.Core.dll");
