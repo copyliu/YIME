@@ -15,7 +15,7 @@ namespace YIME
     {
         private static Guid CLSID_TEXTSERVICE = new Guid("1B4A4B30-B810-4483-8CE6-A5FF82835999");
         private static Guid GUID_PROFILE = new Guid("661B35E7-4637-47F3-8E13-6CEA1E9C6E7E");
-        private static string name = "猫咪输入法";
+        private static string name = "一个输入法";
         static Guid[] SupportCategories = new[]{
             TSF.TypeLib.Guids.GUID_TFCAT_TIP_KEYBOARD,
             TSF.TypeLib.Guids.GUID_TFCAT_DISPLAYATTRIBUTEPROVIDER,
