@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YIME.Gui", "YIME.Gui\YIME.G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSF.TypeLib", "TSF-TypeLib\TSF.TypeLib\TSF.TypeLib.csproj", "{6BB248E4-CD03-40A4-810C-19E038AF2715}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RimeApi", "RimeApi\RimeApi.csproj", "{95360305-AFFD-4B33-8249-7390D0F11629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YIME.PlayGround", "YIME.PlayGround\YIME.PlayGround.csproj", "{15C05516-9743-4715-A163-A9348C0F9A5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{6BB248E4-CD03-40A4-810C-19E038AF2715}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BB248E4-CD03-40A4-810C-19E038AF2715}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BB248E4-CD03-40A4-810C-19E038AF2715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95360305-AFFD-4B33-8249-7390D0F11629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95360305-AFFD-4B33-8249-7390D0F11629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95360305-AFFD-4B33-8249-7390D0F11629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95360305-AFFD-4B33-8249-7390D0F11629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C05516-9743-4715-A163-A9348C0F9A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C05516-9743-4715-A163-A9348C0F9A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C05516-9743-4715-A163-A9348C0F9A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C05516-9743-4715-A163-A9348C0F9A5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
