@@ -71,39 +71,38 @@ namespace RimeApi
             return static_instance;
         }
     }
-
-    class UTF8StringConstantMarshaler : ICustomMarshaler
-    {
-        static UTF8StringConstantMarshaler _instance = new UTF8StringConstantMarshaler();
-
-        public static ICustomMarshaler GetInstance(string cookie = null) => _instance;
-
-        public IntPtr MarshalManagedToNative(object managedObject) => IntPtr.Zero;
-
-        public unsafe object MarshalNativeToManaged(IntPtr pNativeData)
-        {
-
-            byte* walk = (byte*)pNativeData;
-
-            // find the end of the string
-            while (*walk != 0)
-            {
-                walk++;
-            }
-            int length = (int)(walk - (byte*)pNativeData);
-
-            // should not be null terminated
-            byte[] strbuf = new byte[length];
-            // skip the trailing null
-            Marshal.Copy((IntPtr)pNativeData, strbuf, 0, length);
-            string data = Encoding.UTF8.GetString(strbuf);
-            return data;
-
-        }
-
-        public void CleanUpManagedData(object managedObject) { }
-        public void CleanUpNativeData(IntPtr nativeData) { }
-
-        public int GetNativeDataSize() => -1;
-    }
+//    class UTF8StringConstantMarshaler : ICustomMarshaler
+//    {
+//        static UTF8StringConstantMarshaler _instance = new UTF8StringConstantMarshaler();
+//
+//        public static ICustomMarshaler GetInstance(string cookie = null) => _instance;
+//
+//        public IntPtr MarshalManagedToNative(object managedObject) => IntPtr.Zero;
+//
+//        public unsafe object MarshalNativeToManaged(IntPtr pNativeData)
+//        {
+//
+//            byte* walk = (byte*)pNativeData;
+//
+//            // find the end of the string
+//            while (*walk != 0)
+//            {
+//                walk++;
+//            }
+//            int length = (int)(walk - (byte*)pNativeData);
+//
+//            // should not be null terminated
+//            byte[] strbuf = new byte[length];
+//            // skip the trailing null
+//            Marshal.Copy((IntPtr)pNativeData, strbuf, 0, length);
+//            string data = Encoding.UTF8.GetString(strbuf);
+//            return data;
+//
+//        }
+//
+//        public void CleanUpManagedData(object managedObject) { }
+//        public void CleanUpNativeData(IntPtr nativeData) { }
+//
+//        public int GetNativeDataSize() => -1;
+//    }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,10 +13,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using RimeApi;
+
 
 namespace YIME.PlayGround
 {
+  
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
@@ -24,7 +26,13 @@ namespace YIME.PlayGround
         public MainWindow()
         {
             InitializeComponent();
+           
 
+        }
+
+        private void Handler(IntPtr contextObject, UIntPtr sessionId, string messageType, string messageValue)
+        {
+//            Console.
         }
     }
 }
