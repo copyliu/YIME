@@ -227,12 +227,21 @@ namespace RimeApi
         public IntPtr map;
         public int index;
 
-        [MarshalAs(UnmanagedType.LPUTF8Str)]
-        public string key;
+//        [MarshalAs(UnmanagedType.LPUTF8Str)]
+        public IntPtr key_p;
 
-        [MarshalAs(UnmanagedType.LPUTF8Str)]
-        public string path;
-      
+        public string key
+        {
+            get => Common.StringFromNativeUtf8(this.key_p);
+            set => this.key_p = Common.NativeUtf8FromString(value);
+        }
+        //        [MarshalAs(UnmanagedType.LPUTF8Str)]
+        public IntPtr path_p;
+        public string path
+        {
+            get => Common.StringFromNativeUtf8(this.path_p);
+            set => this.path_p = Common.NativeUtf8FromString(value);
+        }
 
     }
     [StructLayout(LayoutKind.Sequential)]

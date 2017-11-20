@@ -36,7 +36,7 @@ namespace YIME.PlayGroundConsole
 
             var rimesessionid = Rime.RimeCreateSession();
             Console.WriteLine("Session ID: " + rimesessionid);
-            Rime.RimeSimulateKeySequence(rimesessionid, "nihao");
+            Rime.RimeSimulateKeySequence(rimesessionid, "maomishurufazhunbeijiuxu");
             var commit = new RimeCommit();
             var status = new RimeStatus();
             var context = new RimeContext();
