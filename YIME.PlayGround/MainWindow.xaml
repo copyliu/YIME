@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Label Content="" Margin="10,10,10,0" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" x:Name="lb" FontSize="15"/>
+
+        <Border Margin="10,40,10,10" BorderBrush="Black" BorderThickness="1"  >
+    <TextBlock TextWrapping="Wrap" Text="" x:Name="tb" FontSize="15"/>
+    </Border>
     </Grid>
 </Window>

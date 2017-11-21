@@ -36,29 +36,39 @@ namespace YIME.PlayGroundConsole
 
             var rimesessionid = Rime.RimeCreateSession();
             Console.WriteLine("Session ID: " + rimesessionid);
-            Rime.RimeSimulateKeySequence(rimesessionid, "maomishurufazhunbeijiuxu");
-            var commit = new RimeCommit();
-            var status = new RimeStatus();
-            var context = new RimeContext();
-            commit.Init();
-            status.Init();
-            context.Init();
-
-            Rime.RimeGetCommit(rimesessionid, ref commit);
-            Rime.RimeGetStatus(rimesessionid, ref status);
-            Rime.RimeGetContext(rimesessionid, ref context);
-            Console.WriteLine("Commit:" + commit.text);
-            Console.WriteLine($"Status:" + status.schema_name);
-            Console.WriteLine("Context:");
-            var candiates =
-                RimeApi.Common.StuctArrayFromIntPtr<RimeCandidate>(context.menu.candidates,
-                    context.menu.num_candidates);
-            for (int i = 0; i < context.menu.num_candidates; i++)
+            
+           
+            while (true)
             {
-                Console.WriteLine($"{i}: {candiates[i].text}");
+                var key = Console.ReadKey();
+                if (key.Key == ConsoleKey.Escape) break;
+                Console.WriteLine();
+                Rime.RimeSimulateKeySequence(rimesessionid, key.KeyChar.ToString());
+
+                var commit = new RimeCommit();
+                var status = new RimeStatus();
+                var context = new RimeContext();
+                commit.Init();
+                status.Init();
+                context.Init();
+
+                Rime.RimeGetCommit(rimesessionid, ref commit);
+                Rime.RimeGetStatus(rimesessionid, ref status);
+                Rime.RimeGetContext(rimesessionid, ref context);
+                Console.WriteLine("Commit:" + commit.text);
+                Console.WriteLine($"Status: {status.is_composing},{status.is_ascii_mode}, {status.schema_name}");
+                Console.WriteLine($"Context: {context.commit_text_preview}, {context.composition.preedit}");
+                var candiates =
+                    RimeApi.Common.StuctArrayFromIntPtr<RimeCandidate>(context.menu.candidates,
+                        context.menu.num_candidates);
+                for (int i = 0; i < context.menu.num_candidates; i++)
+                {
+                    Console.WriteLine($"{i+1}: {candiates[i].text}");
+                }
+
+
+
             }
-
-
 
         }
 
