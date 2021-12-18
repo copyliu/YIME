@@ -70,6 +70,7 @@
     <Compile Include="DisplayAttributeInfo.cs" />
     <Compile Include="YimeCandidateManager.cs" />
     <Compile Include="YimeCompositionManager.cs" />
+    <Compile Include="YimeEditSession.cs" />
     <Compile Include="YimeTextService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

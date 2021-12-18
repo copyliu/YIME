@@ -32,49 +32,67 @@ namespace YIME.Core
     }
     public class YimeCompositionManager: ITfCompositionSink, ITfTextEditSink, ITfKeyEventSink
     {
+        private uint _clientid;
+        private ITfContext actionContext;
+        public YimeCompositionManager(uint clientid)
+        {
+            this._clientid = clientid;
+        }
         public HRESULT OnCompositionTerminated(uint ecWrite, ITfComposition pComposition)
         {
-            throw new NotImplementedException();
+            return new HRESULT(){Code = 0};
         }
 
         public HRESULT OnEndEdit(ITfContext pic, uint ecReadOnly, ITfEditRecord pEditRecord)
         {
-            throw new NotImplementedException();
+            return new HRESULT() { Code =0 };
         }
 
         public HRESULT OnSetFocus(int fForeground)
         {
-            throw new NotImplementedException();
+            return new HRESULT() { Code = 0 };
         }
 
         public HRESULT OnTestKeyDown(ITfContext pic, UIntPtr wParam, IntPtr lParam, out bool pfEaten)
         {
-            throw new NotImplementedException();
+            pfEaten = false;
+            return new HRESULT() { Code = 0 };
         }
 
         public HRESULT OnTestKeyUp(ITfContext pic, UIntPtr wParam, IntPtr lParam, out bool pfEaten)
         {
-            throw new NotImplementedException();
+            pfEaten = false;
+            return new HRESULT() { Code = 0 };
         }
 
         public HRESULT OnKeyDown(ITfContext pic, UIntPtr wParam, IntPtr lParam, out bool pfEaten)
         {
-            throw new NotImplementedException();
+            pfEaten = false;
+            return new HRESULT() { Code = 0 };
         }
 
         public HRESULT OnKeyUp(ITfContext pic, UIntPtr wParam, IntPtr lParam, out bool pfEaten)
         {
-            throw new NotImplementedException();
+            pfEaten = false;
+            return new HRESULT() { Code = 0 };
         }
 
         public HRESULT OnPreservedKey(ITfContext pic, ref Guid rguid, out bool pfEaten)
         {
-            throw new NotImplementedException();
+            pfEaten = false;
+            return new HRESULT() { Code = 0 };
         }
 
-        public void Switch(ITfDocumentMgr pdimFocus, ITfDocumentMgr tfDocumentMgr)
+        public void Switch(ITfDocumentMgr pdimFocus, ITfDocumentMgr pdimPrevFocus)
         {
-            throw new NotImplementedException();
+            if (pdimPrevFocus != null)
+            {
+                pdimPrevFocus.GetTop(out actionContext);
+                var session=new YimeEditSession();
+                actionContext.RequestEditSession(_clientid, session, TF_ES.TF_ES_SYNC | TF_ES.TF_ES_READWRITE, out _);
+            }
+         
+
         }
     }
 }

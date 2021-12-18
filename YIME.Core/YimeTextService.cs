@@ -45,7 +45,7 @@ namespace YIME.Core
         public HRESULT ActivateEx(ITfThreadMgr ptim, uint tid, TF_TMAE dwFlags)
         {
             _candidateManager=new YimeCandidateManager();
-            _compositionManager=new YimeCompositionManager();
+            _compositionManager=new YimeCompositionManager(0);
             _threadmgr = ptim;
             _clientid = tid;
             _flag = dwFlags;
@@ -118,9 +118,9 @@ namespace YIME.Core
 
         HRESULT ITfTextInputProcessor.Deactivate()
         {
-            //UninitKeyEventSink();
-            //UninitThreadFocusSink();
-            //UninitThreadMgrEventSink();
+            UnInitKeyEventSink();
+            UnInitThreadFocusSink();
+            UnInitThreadMgrEventSink();
             if (_threadmgr != null)
             {
                 Marshal.ReleaseComObject(_threadmgr);
