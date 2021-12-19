@@ -27,11 +27,18 @@ namespace LibPinyinApi
                                                               PinyinOption.DYNAMIC_ADJUST);
         }
 
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
         public PinyinInput CreateNewInput()
         {
             return new PinyinInput(this);
         }
 
+      
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
